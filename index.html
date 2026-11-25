@@ -6,17 +6,17 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#09090b">
 <title>NEYO — Critical Ops</title>
-<meta name="description" content="NEYO. Competitive Critical Ops player profile.">
+<meta name="description" content="NEYO — Hungarian Critical Ops player, competitive veteran and [7o] clan leader.">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:#09090b;color:#f5f5f5;font-family:Arial,sans-serif}
 :root{--red:#ed263b;--muted:#92929b}
-header{height:76px;padding:0 8%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #242429;background:#0c0c10}
+header{min-height:76px;padding:0 8%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #242429;background:#0c0c10;position:sticky;top:0;z-index:10}
 .logo{font-size:27px;font-weight:1000;letter-spacing:5px}
 .logo span{color:var(--red)}
-nav{display:flex;gap:25px}
-nav a{color:#aaa;text-decoration:none;font-size:11px;letter-spacing:2px}
+nav{display:flex;gap:22px;flex-wrap:wrap}
+nav a{color:#aaa;text-decoration:none;font-size:10px;letter-spacing:2px}
 nav a:hover{color:var(--red)}
 .hero{min-height:570px;padding:100px 10%;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 80% 55%,#64101e 0%,#250a11 24%,#09090b 65%)}
 .hero:after{content:"NEYO";position:absolute;right:-35px;bottom:-50px;font-size:clamp(150px,30vw,360px);font-weight:1000;color:#ffffff05;letter-spacing:-15px;pointer-events:none}
@@ -30,23 +30,34 @@ h1 span{color:var(--red)}
 section{padding:90px 10%;border-bottom:1px solid #202026}
 .eyebrow{color:var(--red);font-size:11px;letter-spacing:4px;margin-bottom:15px}
 h2{font-size:32px;letter-spacing:3px;margin-bottom:35px}
-.about{color:#aaa;line-height:2;max-width:700px;font-size:15px}
+.about{color:#aaa;line-height:2;max-width:850px;font-size:15px}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .card{background:#111115;border:1px solid #292930;padding:30px;position:relative;overflow:hidden}
 .card:before{content:"";position:absolute;top:0;left:0;width:3px;height:100%;background:var(--red)}
-.number{font-size:43px;font-weight:1000}
-.label{font-size:10px;letter-spacing:3px;color:var(--muted);margin-top:12px}
+.number{font-size:clamp(27px,4vw,43px);font-weight:1000}
+.label{font-size:10px;letter-spacing:3px;color:var(--muted);margin-top:12px;line-height:1.6}
 .achievements{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
 .item{background:#111115;padding:24px;border:1px solid #27272d}
-.item b{font-size:16px}
-.item p{color:var(--muted);font-size:12px;margin-top:9px;line-height:1.6}
+.item b{font-size:16px;letter-spacing:1px}
+.item p{color:var(--muted);font-size:12px;margin-top:9px;line-height:1.7}
 .item:before{content:"✦";color:var(--red);margin-right:12px}
-.note{font-size:11px;color:#777;margin-top:20px}
+.clan-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.clan{background:#111115;border:1px solid #292930;padding:12px 17px;color:#bbb;font-size:12px;letter-spacing:1px}
+.current-clan{border:1px solid var(--red);background:#180b10;padding:30px;max-width:650px}
+.current-clan h3{font-size:27px;letter-spacing:2px;margin:12px 0}
+.current-clan p{color:#aaa;font-size:12px;letter-spacing:2px}
+.leader{color:var(--red)!important;font-weight:bold}
+.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.contact{background:#111115;border:1px solid #292930;padding:25px;color:#aaa;text-decoration:none;display:block;transition:.2s}
+.contact:hover{border-color:var(--red);color:white}
+.contact strong{display:block;color:#fff;font-size:16px;margin-bottom:10px}
+.contact span{color:var(--red);font-size:13px}
+.note{font-size:11px;color:#777;margin-top:20px;line-height:1.7}
 footer{padding:40px 10%;text-align:center;color:#777;font-size:10px;letter-spacing:3px}
 footer span{color:var(--red)}
 @media(max-width:650px){
-header{padding:0 5%;height:65px}
-nav{gap:12px}
+header{padding:15px 5%;min-height:65px;gap:12px;align-items:flex-start;flex-direction:column}
+nav{gap:13px}
 nav a{font-size:9px;letter-spacing:1px}
 .logo{font-size:21px}
 .hero{min-height:470px;padding:75px 7%}
@@ -54,9 +65,10 @@ nav a{font-size:9px;letter-spacing:1px}
 section{padding:65px 7%}
 .stats{grid-template-columns:repeat(2,1fr);gap:10px}
 .card{padding:22px 15px}
-.number{font-size:34px}
 .achievements{grid-template-columns:1fr}
 h2{font-size:25px}
+.contact-grid{grid-template-columns:1fr}
+.current-clan h3{font-size:21px}
 }
 @media(prefers-reduced-motion:no-preference){
 .hero .tag{animation:fade .8s ease both}
@@ -65,6 +77,7 @@ h2{font-size:25px}
 }
 </style>
 </head>
+
 <body>
 <header>
 <div class="logo">NEYO<span>.</span></div>
@@ -72,70 +85,195 @@ h2{font-size:25px}
 <a href="#about">ABOUT</a>
 <a href="#stats">STATS</a>
 <a href="#career">CAREER</a>
+<a href="#clans">CLANS</a>
+<a href="#contact">CONTACT</a>
 </nav>
 </header>
 
 <main>
+
 <div class="hero">
-<div class="tag">CRITICAL OPS / PLAYER PROFILE</div>
+<div class="tag">HUNGARIAN / CRITICAL OPS / PLAYER PROFILE</div>
 <h1>NEYO<span>.</span></h1>
 <p>PRECISION. CONTROL. DOMINANCE.</p>
 <div class="line"></div>
-<a class="btn" href="#about">DISCOVER PLAYER ↗</a>
+<a class="btn" href="#about">DISCOVER THE LEGACY ↗</a>
 </div>
 
 <section id="about">
 <div class="eyebrow">01 / INTRODUCTION</div>
-<h2>THE PLAYER.</h2>
+<h2>THE PLAYER. THE LEGACY.</h2>
 <p class="about">
-Known as NEYO in Critical Ops.
-Focused on precision, fast reactions,
-mechanical skill and competitive gameplay.
+Known as NEYO in Critical Ops. A Hungarian player whose career has been built through years of competitive gameplay, mechanical skill, precision and consistency.
 <br><br>
-A player with a history of Elite-level
-performance, competitive experience and
-a constant drive to improve.
+With more than 700,000 Custom Kills, 120,000 Ranked Kills and 200+ Clan Wars, NEYO has built a remarkable competitive history. From Elite seasons and tournament victories to high-level clan competition, his name represents dedication, experience and a relentless competitive mindset.
+<br><br>
+A five-finger player, known for exceptional Sniper and Revolver gameplay. For two consecutive years, recognized among the world's top players in both weapon categories.
+<br><br>
+More than statistics — a legacy built across seasons, teams and competition.
 </p>
 </section>
 
 <section id="stats">
-<div class="eyebrow">02 / PERFORMANCE</div>
+<div class="eyebrow">02 / CAREER NUMBERS</div>
 <h2>PLAYER STATISTICS.</h2>
 <div class="stats">
+
 <div class="card">
-<div class="number">2.00+</div>
-<div class="label">HISTORICAL K/D</div>
+<div class="number">700K+</div>
+<div class="label">CUSTOM KILLS</div>
 </div>
+
 <div class="card">
-<div class="number">2500</div>
-<div class="label">PEAK RATING</div>
+<div class="number">120K+</div>
+<div class="label">RANKED KILLS</div>
 </div>
+
 <div class="card">
-<div class="number">143+</div>
-<div class="label">MATCHES</div>
+<div class="number">200+</div>
+<div class="label">CLAN WARS</div>
 </div>
+
+<div class="card">
+<div class="number">S3+</div>
+<div class="label">ELITE EVERY SEASON SINCE SEASON 3</div>
 </div>
-<p class="note">Historical achievements and figures. Not live game statistics.</p>
+
+<div class="card">
+<div class="number">2.0+</div>
+<div class="label">K/D IN TWO ELITE SEASONS</div>
+</div>
+
+<div class="card">
+<div class="number">ELITE 1</div>
+<div class="label">HIGHEST ACHIEVED RANK</div>
+</div>
+
+</div>
+<p class="note">Career figures and historical achievements. These are not live game statistics.</p>
 </section>
 
 <section id="career">
-<div class="eyebrow">03 / HISTORY</div>
+<div class="eyebrow">03 / COMPETITIVE HISTORY</div>
 <h2>ACHIEVEMENTS.</h2>
 <div class="achievements">
-<div class="item"><b>ELITE OPS</b><p>Multiple Elite Ops seasons.</p></div>
-<div class="item"><b>ELITE 1</b><p>Full Elite 1 achievement.</p></div>
-<div class="item"><b>CIRCUIT WIN</b><p>Competitive tournament victory.</p></div>
-<div class="item"><b>GOLDEN OX</b><p>In-game achievement.</p></div>
-<div class="item"><b>RUMBLE</b><p>Competitive game history.</p></div>
-<div class="item"><b>CLAN WARS</b><p>Clan Wars experience.</p></div>
+
+<div class="item">
+<b>ELITE SINCE SEASON 3</b>
+<p>Reached Elite rank in every season since Season 3.</p>
+</div>
+
+<div class="item">
+<b>ELITE 1</b>
+<p>Achieved the Elite 1 rank during a competitive career.</p>
+</div>
+
+<div class="item">
+<b>2.0+ K/D SEASONS</b>
+<p>Two seasons with a 2.0+ K/D while competing at Elite rank.</p>
+</div>
+
+<div class="item">
+<b>CIRCUIT CHAMPION</b>
+<p>Secured a Circuit victory, alongside numerous additional Circuit placements.</p>
+</div>
+
+<div class="item">
+<b>MULTIPLE FIRST PLACES</b>
+<p>Multiple first-place finishes across competitive events.</p>
+</div>
+
+<div class="item">
+<b>RUMBLE PLACEMENTS</b>
+<p>Numerous competitive Rumble placements and achievements.</p>
+</div>
+
+<div class="item">
+<b>200+ CLAN WARS</b>
+<p>Extensive Clan War experience, with multiple competitive placements.</p>
+</div>
+
+<div class="item">
+<b>SNIPER & REVOLVER SPECIALIST</b>
+<p>Recognized among the world's top Sniper and Revolver players for two consecutive years.</p>
+</div>
+
+<div class="item">
+<b>FIVE-FINGER PLAYSTYLE</b>
+<p>A five-finger control setup built around precision, speed and mechanical control.</p>
+</div>
+
+<div class="item">
+<b>HUNGARIAN PLAYER</b>
+<p>Representing Hungarian roots in the Critical Ops competitive scene.</p>
+</div>
+
 </div>
 </section>
+
+<section id="clans">
+<div class="eyebrow">04 / TEAM HISTORY</div>
+<h2>CLAN LEGACY.</h2>
+
+<p class="about">
+Throughout his career, NEYO has competed alongside multiple teams and communities, building experience across different competitive environments.
+</p>
+
+<div class="clan-list">
+<span class="clan">E8</span>
+<span class="clan">RGN</span>
+<span class="clan">inK</span>
+<span class="clan">God</span>
+<span class="clan">VLRS</span>
+<span class="clan">HMRS</span>
+<span class="clan">xQ</span>
+<span class="clan">G9</span>
+<span class="clan">G2</span>
+<span class="clan">Ev</span>
+<span class="clan">1NQ</span>
+<span class="clan">2EZ4</span>
+<span class="clan">S2F</span>
+<span class="clan">CsPG</span>
+<span class="clan">XZI</span>
+<span class="clan">Lega</span>
+<span class="clan">666</span>
+<span class="clan">XnXX</span>
+</div>
+
+<div style="height:35px"></div>
+
+<div class="eyebrow">CURRENT TEAM</div>
+<div class="current-clan">
+<p>CURRENT CLAN</p>
+<h3>[7o] BORN TO BE GOD!</h3>
+<p class="leader">CLAN LEADER — NEYO</p>
+</div>
+</section>
+
+<section id="contact">
+<div class="eyebrow">05 / GET IN TOUCH</div>
+<h2>CONTACT & SOCIALS.</h2>
+
+<div class="contact-grid">
+<a class="contact" href="https://www.instagram.com/azxhuree_official/" target="_blank" rel="noopener noreferrer">
+<strong>INSTAGRAM</strong>
+<span>@azxhuree_official ↗</span>
+</a>
+
+<div class="contact">
+<strong>DISCORD</strong>
+<span>Azxhure#7130</span>
+</div>
+</div>
+</section>
+
 </main>
 
 <footer>
 NEYO <span>©</span> 2026 — CRITICAL OPS
 <br><br>
-BUILT TO COMPETE.
+BUILT TO COMPETE. REMEMBER THE NAME.
 </footer>
+
 </body>
 </html>

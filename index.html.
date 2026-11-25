@@ -1,177 +1,141 @@
+
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>NEYO | Critical Ops</title>
-
-<meta name="description" content="NEYO - Competitive Critical Ops player profile.">
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#09090b">
+<title>NEYO — Critical Ops</title>
+<meta name="description" content="NEYO. Competitive Critical Ops player profile.">
 <style>
-
-*{box-sizing:border-box;margin:0;padding:0}
-
-body{background:#09090d;color:#f5f5f7;font-family:Arial,sans-serif}
-
-header{padding:25px 8%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #24242b}
-
-.logo{font-size:28px;font-weight:900;letter-spacing:5px}
-
-.logo span,.red{color:#ed3445}
-
-nav a{color:#aaa;text-decoration:none;margin-left:22px;font-size:12px}
-
-.hero{min-height:430px;padding:100px 9%;display:flex;flex-direction:column;justify-content:center;background:radial-gradient(ellipse at 75% 50%,#51131c 0%,#1b0c12 35%,#09090d 75%)}
-
-.tag{color:#ed3445;letter-spacing:4px;font-size:12px}
-
-h1{font-size:clamp(65px,13vw,125px);font-weight:900;letter-spacing:8px;margin:15px 0}
-
-.hero p{color:#aaa;letter-spacing:3px;font-size:13px}
-
-section{padding:75px 9%}
-
-h2{font-size:28px;margin-bottom:30px;letter-spacing:3px}
-
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-
-.card{background:#141419;border:1px solid #292930;padding:25px;border-radius:8px}
-
-.number{font-size:35px;font-weight:900;color:#ed3445}
-
-.small{font-size:11px;color:#999;letter-spacing:2px;margin-top:8px}
-
-.about{color:#aaa;line-height:1.8;max-width:650px}
-
-.achievements{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-
-.achievement{background:#141419;padding:20px;border-left:3px solid #ed3445}
-
-.achievement small{color:#999}
-
-footer{text-align:center;padding:35px;color:#666;border-top:1px solid #25252b;font-size:11px;letter-spacing:2px}
-
-@media(max-width:600px){
-
-nav a{margin-left:9px;font-size:10px}
-
-header{padding:20px 5%}
-
-section{padding:55px 6%}
-
-.stats{grid-template-columns:repeat(2,1fr)}
-
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#09090b;color:#f5f5f5;font-family:Arial,sans-serif}
+:root{--red:#ed263b;--muted:#92929b}
+header{height:76px;padding:0 8%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #242429;background:#0c0c10}
+.logo{font-size:27px;font-weight:1000;letter-spacing:5px}
+.logo span{color:var(--red)}
+nav{display:flex;gap:25px}
+nav a{color:#aaa;text-decoration:none;font-size:11px;letter-spacing:2px}
+nav a:hover{color:var(--red)}
+.hero{min-height:570px;padding:100px 10%;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 80% 55%,#64101e 0%,#250a11 24%,#09090b 65%)}
+.hero:after{content:"NEYO";position:absolute;right:-35px;bottom:-50px;font-size:clamp(150px,30vw,360px);font-weight:1000;color:#ffffff05;letter-spacing:-15px;pointer-events:none}
+.tag{color:var(--red);font-size:12px;letter-spacing:5px;font-weight:bold}
+h1{font-size:clamp(75px,15vw,155px);font-weight:1000;letter-spacing:10px;margin:20px 0;line-height:1}
+h1 span{color:var(--red)}
+.hero p{font-size:13px;letter-spacing:5px;color:#aaa}
+.line{width:75px;height:4px;background:var(--red);margin:30px 0}
+.btn{display:inline-block;border:1px solid var(--red);padding:15px 25px;color:white;text-decoration:none;font-size:11px;letter-spacing:3px;width:max-content;margin-top:30px;transition:.25s}
+.btn:hover{background:var(--red)}
+section{padding:90px 10%;border-bottom:1px solid #202026}
+.eyebrow{color:var(--red);font-size:11px;letter-spacing:4px;margin-bottom:15px}
+h2{font-size:32px;letter-spacing:3px;margin-bottom:35px}
+.about{color:#aaa;line-height:2;max-width:700px;font-size:15px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#111115;border:1px solid #292930;padding:30px;position:relative;overflow:hidden}
+.card:before{content:"";position:absolute;top:0;left:0;width:3px;height:100%;background:var(--red)}
+.number{font-size:43px;font-weight:1000}
+.label{font-size:10px;letter-spacing:3px;color:var(--muted);margin-top:12px}
+.achievements{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.item{background:#111115;padding:24px;border:1px solid #27272d}
+.item b{font-size:16px}
+.item p{color:var(--muted);font-size:12px;margin-top:9px;line-height:1.6}
+.item:before{content:"✦";color:var(--red);margin-right:12px}
+.note{font-size:11px;color:#777;margin-top:20px}
+footer{padding:40px 10%;text-align:center;color:#777;font-size:10px;letter-spacing:3px}
+footer span{color:var(--red)}
+@media(max-width:650px){
+header{padding:0 5%;height:65px}
+nav{gap:12px}
+nav a{font-size:9px;letter-spacing:1px}
+.logo{font-size:21px}
+.hero{min-height:470px;padding:75px 7%}
+.hero p{font-size:10px;letter-spacing:3px}
+section{padding:65px 7%}
+.stats{grid-template-columns:repeat(2,1fr);gap:10px}
+.card{padding:22px 15px}
+.number{font-size:34px}
 .achievements{grid-template-columns:1fr}
-
-.hero{padding:80px 7%}
-
+h2{font-size:25px}
 }
-
+@media(prefers-reduced-motion:no-preference){
+.hero .tag{animation:fade .8s ease both}
+.hero h1{animation:fade 1s ease both}
+@keyframes fade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+}
 </style>
-
 </head>
-
 <body>
-
 <header>
-
 <div class="logo">NEYO<span>.</span></div>
-
 <nav>
-
 <a href="#about">ABOUT</a>
-
 <a href="#stats">STATS</a>
-
-<a href="#achievements">ACHIEVEMENTS</a>
-
+<a href="#career">CAREER</a>
 </nav>
-
 </header>
 
+<main>
 <div class="hero">
-
-<div class="tag">CRITICAL OPS / COMPETITIVE PLAYER</div>
-
-<h1>NEYO<span class="red">.</span></h1>
-
-<p>PRECISION. DISCIPLINE. COMPETITION.</p>
-
+<div class="tag">CRITICAL OPS / PLAYER PROFILE</div>
+<h1>NEYO<span>.</span></h1>
+<p>PRECISION. CONTROL. DOMINANCE.</p>
+<div class="line"></div>
+<a class="btn" href="#about">DISCOVER PLAYER ↗</a>
 </div>
 
 <section id="about">
-
-<h2><span class="red">//</span> ABOUT ME</h2>
-
+<div class="eyebrow">01 / INTRODUCTION</div>
+<h2>THE PLAYER.</h2>
 <p class="about">
-
-Welcome to my official player profile.
-
-I'm NEYO, a Critical Ops player focused on
-
-competitive gameplay, precision aiming and
-
-continuous improvement.
-
+Known as NEYO in Critical Ops.
+Focused on precision, fast reactions,
+mechanical skill and competitive gameplay.
 <br><br>
-
-This page showcases my player history,
-
-achievements and competitive journey.
-
+A player with a history of Elite-level
+performance, competitive experience and
+a constant drive to improve.
 </p>
-
 </section>
 
 <section id="stats">
-
-<h2><span class="red">//</span> PLAYER STATS</h2>
-
+<div class="eyebrow">02 / PERFORMANCE</div>
+<h2>PLAYER STATISTICS.</h2>
 <div class="stats">
-
-<div class="card"><div class="number">2.00+</div><div class="small">HISTORICAL K/D</div></div>
-
-<div class="card"><div class="number">2500</div><div class="small">PEAK RATING</div></div>
-
-<div class="card"><div class="number">143+</div><div class="small">MATCHES</div></div>
-
+<div class="card">
+<div class="number">2.00+</div>
+<div class="label">HISTORICAL K/D</div>
 </div>
-
+<div class="card">
+<div class="number">2500</div>
+<div class="label">PEAK RATING</div>
+</div>
+<div class="card">
+<div class="number">143+</div>
+<div class="label">MATCHES</div>
+</div>
+</div>
+<p class="note">Historical achievements and figures. Not live game statistics.</p>
 </section>
 
-<section id="achievements">
-
-<h2><span class="red">//</span> ACHIEVEMENTS</h2>
-
+<section id="career">
+<div class="eyebrow">03 / HISTORY</div>
+<h2>ACHIEVEMENTS.</h2>
 <div class="achievements">
-
-<div class="achievement"><b>Elite Ops</b><br><small>Multiple Elite Ops seasons</small></div>
-
-<div class="achievement"><b>Elite 1</b><br><small>Full Elite 1 achievement</small></div>
-
-<div class="achievement"><b>Circuit Winner</b><br><small>Competitive achievement</small></div>
-
-<div class="achievement"><b>Golden Ox</b><br><small>In-game achievement</small></div>
-
-<div class="achievement"><b>Rumble</b><br><small>Competitive history</small></div>
-
-<div class="achievement"><b>Clan Wars</b><br><small>CW experience</small></div>
-
+<div class="item"><b>ELITE OPS</b><p>Multiple Elite Ops seasons.</p></div>
+<div class="item"><b>ELITE 1</b><p>Full Elite 1 achievement.</p></div>
+<div class="item"><b>CIRCUIT WIN</b><p>Competitive tournament victory.</p></div>
+<div class="item"><b>GOLDEN OX</b><p>In-game achievement.</p></div>
+<div class="item"><b>RUMBLE</b><p>Competitive game history.</p></div>
+<div class="item"><b>CLAN WARS</b><p>Clan Wars experience.</p></div>
 </div>
-
 </section>
+</main>
 
 <footer>
-
-NEYO © 2026 | CRITICAL OPS PLAYER PROFILE
-
+NEYO <span>©</span> 2026 — CRITICAL OPS
+<br><br>
+BUILT TO COMPETE.
 </footer>
-
 </body>
-
 </html>

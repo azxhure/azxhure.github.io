@@ -6,367 +6,194 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#09090b">
 <title>NEYO — Critical Ops</title>
-<meta name="description" content="NEYO — Hungarian Critical Ops veteran, competitive player and [7o] clan leader.">
+<meta name="description" content="NEYO — Hungarian Critical Ops player. Competitive history, statistics, clan legacy and achievements.">
+
 <style>
-:root{
-  --bg:#09090b;
-  --panel:#111115;
-  --red:#ed263b;
-  --darkred:#681522;
-  --text:#f5f5f5;
-  --muted:#9999a3;
-  --border:#292930;
-}
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:Arial,Helvetica,sans-serif;
-  overflow-x:hidden;
-}
-a{color:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{background:#09090b;color:#f5f5f5;font-family:Arial,Helvetica,sans-serif}
+:root{--red:#ed263b;--muted:#92929b;--panel:#111115;--border:#292930}
+
 header{
-  min-height:76px;
-  padding:0 8%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  background:#0c0c10;
-  border-bottom:1px solid #242429;
-  position:sticky;
-  top:0;
-  z-index:20;
+position:sticky;top:0;z-index:20;height:76px;padding:0 8%;
+display:flex;align-items:center;justify-content:space-between;
+border-bottom:1px solid #242429;background:rgba(12,12,16,.96);
+backdrop-filter:blur(12px)
 }
-.logo{
-  font-size:27px;
-  font-weight:1000;
-  letter-spacing:5px;
-}
+.logo{font-size:27px;font-weight:1000;letter-spacing:5px}
 .logo span{color:var(--red)}
-nav{
-  display:flex;
-  flex-wrap:wrap;
-  gap:22px;
-}
-nav a{
-  color:#aaa;
-  text-decoration:none;
-  font-size:10px;
-  letter-spacing:2px;
-  transition:.2s;
-}
+nav{display:flex;gap:24px}
+nav a{color:#aaa;text-decoration:none;font-size:10px;letter-spacing:2px;transition:.2s}
 nav a:hover{color:var(--red)}
+
 .hero{
-  min-height:590px;
-  padding:100px 10%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  position:relative;
-  overflow:hidden;
-  background:
-  radial-gradient(ellipse at 82% 48%,rgba(130,15,35,.65),transparent 48%),
-  linear-gradient(115deg,#09090b 35%,#19090e 75%,#310b15);
-}
-.hero:before{
-  content:"";
-  position:absolute;
-  width:480px;
-  height:480px;
-  right:-120px;
-  top:30px;
-  border:1px solid rgba(237,38,59,.16);
-  transform:rotate(45deg);
-  box-shadow:0 0 100px rgba(237,38,59,.12);
+min-height:490px;padding:90px 10%;display:flex;flex-direction:column;
+justify-content:center;position:relative;overflow:hidden;
+background:radial-gradient(ellipse at 80% 55%,#64101e 0%,#250a11 24%,#09090b 65%)
 }
 .hero:after{
-  content:"NEYO";
-  position:absolute;
-  right:-35px;
-  bottom:-55px;
-  font-size:clamp(150px,30vw,360px);
-  font-weight:1000;
-  color:#ffffff05;
-  letter-spacing:-15px;
-  pointer-events:none;
+content:"NEYO";position:absolute;right:-30px;bottom:-55px;
+font-size:clamp(150px,30vw,360px);font-weight:1000;
+color:#ffffff05;letter-spacing:-15px;pointer-events:none
 }
-.hero-content{position:relative;z-index:2}
-.tag{
-  color:var(--red);
-  font-size:12px;
-  letter-spacing:5px;
-  font-weight:bold;
-}
-h1{
-  font-size:clamp(75px,15vw,155px);
-  font-weight:1000;
-  letter-spacing:10px;
-  margin:20px 0;
-  line-height:1;
-}
+.tag{color:var(--red);font-size:11px;letter-spacing:5px;font-weight:bold}
+h1{font-size:clamp(75px,15vw,155px);font-weight:1000;letter-spacing:10px;margin:20px 0;line-height:1}
 h1 span{color:var(--red)}
-.hero-sub{
-  font-size:13px;
-  letter-spacing:5px;
-  color:#aaa;
-}
-.line{
-  width:75px;
-  height:4px;
-  background:var(--red);
-  margin:30px 0;
-}
+.hero p{font-size:12px;letter-spacing:5px;color:#aaa}
+.line{width:75px;height:4px;background:var(--red);margin:28px 0}
 .btn{
-  display:inline-block;
-  border:1px solid var(--red);
-  padding:15px 25px;
-  color:white;
-  text-decoration:none;
-  font-size:11px;
-  letter-spacing:3px;
-  width:max-content;
-  margin-top:10px;
-  transition:.25s;
+display:inline-block;border:1px solid var(--red);padding:14px 24px;
+color:white;text-decoration:none;font-size:10px;letter-spacing:3px;
+width:max-content;margin-top:15px;transition:.25s
 }
 .btn:hover{background:var(--red)}
-section{
-  padding:90px 10%;
-  border-bottom:1px solid #202026;
-  scroll-margin-top:85px;
+
+section{padding:85px 10%;border-bottom:1px solid #202026}
+.eyebrow{color:var(--red);font-size:10px;letter-spacing:4px;margin-bottom:14px}
+h2{font-size:clamp(25px,4vw,34px);letter-spacing:3px;margin-bottom:32px}
+.section-intro{color:#999;font-size:13px;line-height:1.9;max-width:760px;margin-top:-15px;margin-bottom:30px}
+
+/* STATISTICS */
+.stat-tables{
+display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;
+align-items:start
 }
-.eyebrow{
-  color:var(--red);
-  font-size:11px;
-  letter-spacing:4px;
-  margin-bottom:15px;
+.stat-panel{
+background:linear-gradient(145deg,#151519,#0e0e12);
+border:1px solid #303038;position:relative;overflow:hidden
 }
-h2{
-  font-size:32px;
-  letter-spacing:3px;
-  margin-bottom:35px;
+.stat-panel:before{
+content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:var(--red)
 }
-.about{
-  color:#aaa;
-  line-height:2;
-  max-width:900px;
-  font-size:15px;
+.panel-title{
+padding:23px 25px 18px;border-bottom:1px solid #292930;
+font-size:13px;letter-spacing:3px;font-weight:bold
 }
-.stats-kd{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:18px;
-  margin-bottom:40px;
+.panel-title span{color:var(--red)}
+.stat-table{width:100%;border-collapse:collapse}
+.stat-table td{padding:14px 22px;border-bottom:1px solid #222228;font-size:12px}
+.stat-table tr:last-child td{border-bottom:0}
+.stat-table td:first-child{color:#999;letter-spacing:1px}
+.stat-table td:last-child{text-align:right;font-weight:bold;color:#fff;font-variant-numeric:tabular-nums}
+.stat-table .highlight td:last-child{color:var(--red);font-size:15px}
+.stat-note{font-size:10px;color:#777;margin-top:20px;line-height:1.7}
+
+.stat-highlights{
+display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px
 }
-.kd-box{
-  background:linear-gradient(135deg,#190b11,#100e12);
-  border:1px solid #54202c;
-  border-left:3px solid var(--red);
-  padding:25px;
+.metric{
+background:#111115;border:1px solid #292930;padding:22px 18px;
+position:relative;overflow:hidden
 }
-.kd-box span{
-  font-size:10px;
-  letter-spacing:3px;
-  color:var(--muted);
-}
-.kd-box strong{
-  display:block;
-  font-size:clamp(35px,6vw,54px);
-  color:var(--red);
-  margin-top:12px;
-  font-weight:1000;
-}
-.table-heading{
-  color:var(--red);
-  font-size:11px;
-  letter-spacing:4px;
-  margin:35px 0 14px;
-}
-.table-wrap{
-  width:100%;
-  overflow-x:auto;
-  border:1px solid #302027;
-  background:#0d0d11;
-}
-.stats-table{
-  width:100%;
-  border-collapse:collapse;
-  text-align:left;
-  min-width:380px;
-}
-.stats-table th{
-  background:#1a0b10;
-  color:var(--red);
-  font-size:10px;
-  letter-spacing:2px;
-  padding:17px 20px;
-  border-bottom:1px solid #54202c;
-}
-.stats-table td{
-  padding:17px 20px;
-  border-bottom:1px solid #25252b;
-  font-size:13px;
-  color:#ddd;
-}
-.stats-table tbody tr:last-child td{border-bottom:0}
-.stats-table tbody tr:hover{background:#1b1015}
-.stats-table td:first-child{
-  color:#aaa;
-  font-size:11px;
-  letter-spacing:1px;
-  font-weight:bold;
-}
-.stats-table .value{
-  font-weight:900;
-  color:white;
-  font-variant-numeric:tabular-nums;
-}
-.stats-table .highlight{color:var(--red)}
-.note{
-  font-size:11px;
-  color:#777;
-  margin-top:18px;
-  line-height:1.8;
-}
-.achievements{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:15px;
-}
-.item{
-  background:var(--panel);
-  padding:24px;
-  border:1px solid var(--border);
-  transition:.2s;
-}
-.item:hover{border-color:var(--red);transform:translateY(-2px)}
-.item b{
-  font-size:14px;
-  letter-spacing:1px;
-}
-.item p{
-  color:var(--muted);
-  font-size:12px;
-  margin-top:10px;
-  line-height:1.8;
-}
-.item:before{
-  content:"✦";
-  color:var(--red);
-  margin-right:12px;
-}
-.clan-intro{
-  color:#aaa;
-  line-height:1.9;
-  font-size:14px;
-  max-width:850px;
-}
-.clan-list{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:25px;
-}
-.clan{
-  background:#111115;
-  border:1px solid #292930;
-  padding:12px 17px;
-  color:#bbb;
-  font-size:12px;
-  letter-spacing:1px;
-  transition:.2s;
-}
-.clan:hover{
-  border-color:var(--red);
-  color:white;
-}
+.metric:before{content:"";position:absolute;left:0;top:0;width:3px;height:100%;background:var(--red)}
+.metric strong{font-size:clamp(22px,3vw,34px);display:block;font-weight:1000}
+.metric span{display:block;color:var(--muted);font-size:9px;letter-spacing:2px;margin-top:9px}
+
+/* CLANS */
 .current-clan{
-  border:1px solid var(--red);
-  border-left:4px solid var(--red);
-  background:linear-gradient(110deg,#1b0b11,#100d11);
-  padding:30px;
-  max-width:650px;
+background:linear-gradient(110deg,#260b12,#111115 70%);
+border:1px solid #61202c;padding:30px;margin-bottom:25px;
+position:relative;overflow:hidden
 }
-.current-clan h3{
-  font-size:clamp(21px,4vw,29px);
-  letter-spacing:2px;
-  margin:14px 0;
+.current-clan:after{
+content:"7o";position:absolute;right:25px;top:-25px;
+font-size:120px;font-weight:1000;color:#ffffff08
 }
-.current-clan p{
-  color:#aaa;
-  font-size:11px;
-  letter-spacing:2px;
+.current-clan .small{font-size:10px;letter-spacing:4px;color:var(--red)}
+.current-clan h3{font-size:clamp(24px,4vw,38px);letter-spacing:2px;margin:13px 0}
+.current-clan p{color:#bbb;font-size:11px;letter-spacing:2px}
+.clan-list{display:flex;flex-wrap:wrap;gap:10px}
+.clan{
+border:1px solid #33333b;background:#111115;padding:12px 17px;
+font-size:12px;font-weight:bold;letter-spacing:1px;transition:.2s
 }
-.current-clan .leader{
-  color:var(--red);
-  font-weight:bold;
+.clan:hover{border-color:var(--red);color:var(--red)}
+.clan-label{font-size:10px;letter-spacing:3px;color:#888;margin:25px 0 15px}
+
+/* ACHIEVEMENTS */
+.achievements{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.item{
+background:#111115;padding:24px;border:1px solid #27272d;
+min-height:125px;transition:.25s
 }
-.contact-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:15px;
+.item:hover{border-color:#74202d;transform:translateY(-3px)}
+.item b{font-size:13px;letter-spacing:1px}
+.item p{color:var(--muted);font-size:11px;margin-top:10px;line-height:1.7}
+.item:before{content:"✦";color:var(--red);margin-right:10px}
+
+/* PLAYER */
+.player-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:35px}
+.about{color:#aaa;line-height:2.1;font-size:14px;max-width:720px}
+.player-facts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fact{background:#111115;border:1px solid #292930;padding:19px}
+.fact strong{display:block;color:#fff;font-size:13px;letter-spacing:1px}
+.fact span{display:block;color:#888;font-size:9px;letter-spacing:2px;margin-top:8px}
+
+/* LEGACY */
+.legacy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.legacy-card{
+background:linear-gradient(145deg,#171116,#101014);
+border:1px solid #35232a;padding:28px;position:relative
 }
-.contact{
-  background:#111115;
-  border:1px solid #292930;
-  padding:25px;
-  color:#aaa;
-  text-decoration:none;
-  display:block;
-  transition:.2s;
+.legacy-card .symbol{font-size:27px;color:var(--red);margin-bottom:17px}
+.legacy-card h3{font-size:17px;letter-spacing:2px;margin-bottom:12px}
+.legacy-card p{font-size:12px;color:#999;line-height:1.9}
+.legacy-bottom{
+margin-top:20px;padding-top:15px;border-top:1px solid #30242a;
+font-size:10px;color:var(--red);letter-spacing:2px
 }
-.contact:hover{
-  border-color:var(--red);
-  color:white;
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.contact-card{
+background:#111115;border:1px solid #292930;padding:24px;
+text-decoration:none;color:#fff;transition:.2s
 }
-.contact strong{
-  display:block;
-  color:white;
-  font-size:15px;
-  margin-bottom:12px;
-  letter-spacing:2px;
-}
-.contact span{
-  color:var(--red);
-  font-size:13px;
-}
+.contact-card:hover{border-color:var(--red);transform:translateY(-2px)}
+.contact-card span{display:block;color:var(--red);font-size:9px;letter-spacing:3px;margin-bottom:12px}
+.contact-card strong{font-size:14px;letter-spacing:1px;overflow-wrap:anywhere}
+.contact-note{color:#777;font-size:11px;margin-top:25px;line-height:1.8}
+
 footer{
-  padding:40px 10%;
-  text-align:center;
-  color:#777;
-  font-size:10px;
-  letter-spacing:3px;
-  line-height:2;
+padding:38px 10%;text-align:center;color:#777;
+font-size:10px;letter-spacing:3px;line-height:2
 }
 footer span{color:var(--red)}
-@media(max-width:700px){
-  header{
-    padding:15px 5%;
-    min-height:65px;
-    align-items:flex-start;
-    flex-direction:column;
-    gap:14px;
-  }
-  nav{gap:13px}
-  nav a{font-size:9px;letter-spacing:1px}
-  .logo{font-size:21px}
-  .hero{min-height:470px;padding:75px 7%}
-  .hero-sub{font-size:10px;letter-spacing:3px}
-  section{padding:65px 7%}
-  .stats-kd{gap:10px}
-  .kd-box{padding:18px 14px}
-  .achievements{grid-template-columns:1fr}
-  h2{font-size:25px}
-  .contact-grid{grid-template-columns:1fr}
-  .stats-table td{padding:15px 13px}
+
+@media(max-width:850px){
+header{padding:0 5%}
+nav{gap:12px}
+nav a{font-size:9px;letter-spacing:1px}
+section{padding:65px 7%}
+.stat-highlights{grid-template-columns:repeat(2,1fr)}
+.achievements{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+header{height:auto;min-height:65px;flex-wrap:wrap;padding:14px 5%;gap:12px}
+.logo{font-size:21px}
+nav{width:100%;justify-content:space-between;gap:5px}
+nav a{font-size:8px;letter-spacing:1px}
+.hero{min-height:420px;padding:70px 7%}
+.hero p{font-size:9px;letter-spacing:3px}
+section{padding:58px 6%}
+.stat-tables{grid-template-columns:1fr}
+.stat-highlights{gap:9px}
+.metric{padding:18px 13px}
+.metric strong{font-size:27px}
+.achievements{grid-template-columns:1fr}
+.player-grid{grid-template-columns:1fr}
+.player-facts{grid-template-columns:1fr 1fr}
+.legacy-grid{grid-template-columns:1fr}
+.contact-grid{grid-template-columns:1fr}
+h2{font-size:25px}
 }
 @media(prefers-reduced-motion:no-preference){
-  .hero-content{animation:fadein 1s ease both}
-  @keyframes fadein{
-    from{opacity:0;transform:translateY(18px)}
-    to{opacity:1;transform:translateY(0)}
-  }
+.hero .tag{animation:fade .8s ease both}
+.hero h1{animation:fade 1s ease both}
+@keyframes fade{
+from{opacity:0;transform:translateY(18px)}
+to{opacity:1;transform:translateY(0)}
+}
 }
 </style>
 </head>
@@ -374,233 +201,221 @@ footer span{color:var(--red)}
 <body>
 
 <header>
-  <div class="logo">NEYO<span>.</span></div>
-  <nav>
-    <a href="#about">ABOUT</a>
-    <a href="#stats">STATS</a>
-    <a href="#career">CAREER</a>
-    <a href="#clans">CLANS</a>
-    <a href="#contact">CONTACT</a>
-  </nav>
+<div class="logo">NEYO<span>.</span></div>
+<nav>
+<a href="#stats">STATISTICS</a>
+<a href="#clans">CLANS</a>
+<a href="#achievements">ACHIEVEMENTS</a>
+<a href="#player">PLAYER</a>
+<a href="#legacy">LEGACY</a>
+<a href="#contact">CONTACT</a>
+</nav>
 </header>
 
 <main>
 
 <div class="hero">
-  <div class="hero-content">
-    <div class="tag">HUNGARIAN / CRITICAL OPS / PLAYER PROFILE</div>
-    <h1>NEYO<span>.</span></h1>
-    <p class="hero-sub">PRECISION. CONTROL. DOMINANCE.</p>
-    <div class="line"></div>
-    <a class="btn" href="#about">DISCOVER THE LEGACY ↗</a>
-  </div>
+<div class="tag">HUNGARY / CRITICAL OPS PLAYER</div>
+<h1>NEYO<span>.</span></h1>
+<p>PRECISION. CONTROL. DOMINANCE.</p>
+<div class="line"></div>
+<a class="btn" href="#stats">EXPLORE THE PROFILE ↗</a>
 </div>
 
-<section id="about">
-  <div class="eyebrow">01 / INTRODUCTION</div>
-  <h2>THE PLAYER. THE LEGACY.</h2>
-  <p class="about">
-    Known as NEYO in Critical Ops. A Hungarian player whose career has been
-    built through years of competitive gameplay, mechanical skill, precision
-    and consistency.
-    <br><br>
-    With more than 731,000 Custom Kills, 126,000 Ranked Kills and over
-    200 Clan Wars, NEYO has built an extensive competitive history.
-    From Elite seasons and Circuit victories to high-level clan competition,
-    his name represents dedication, experience and a relentless competitive mindset.
-    <br><br>
-    A five-finger player, known for exceptional Sniper and Revolver gameplay.
-    For two consecutive years, regarded among the world's top players in both
-    weapon categories.
-    <br><br>
-    More than statistics — a legacy built across seasons, teams and competition.
-  </p>
-</section>
-
+<!-- 01 PLAYER STATISTICS -->
 <section id="stats">
-  <div class="eyebrow">02 / CAREER DATABASE</div>
-  <h2>PLAYER STATISTICS.</h2>
+<div class="eyebrow">01 / PERFORMANCE RECORD</div>
+<h2>PLAYER STATISTICS.</h2>
+<p class="section-intro">
+A record built through thousands of matches, consistent performance and competitive experience.
+</p>
 
-  <div class="stats-kd">
-    <div class="kd-box">
-      <span>CUSTOM K/D RATIO</span>
-      <strong>2.28</strong>
-    </div>
-    <div class="kd-box">
-      <span>RANKED K/D RATIO</span>
-      <strong>1.41</strong>
-    </div>
-  </div>
+<div class="stat-tables">
 
-  <div class="table-heading">CUSTOM MATCH STATISTICS</div>
-  <div class="table-wrap">
-    <table class="stats-table">
-      <thead>
-        <tr>
-          <th>STATISTIC</th>
-          <th>CAREER VALUE</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>TOTAL KILLS</td><td class="value highlight">731,006</td></tr>
-        <tr><td>TOTAL DEATHS</td><td class="value">320,617</td></tr>
-        <tr><td>K/D RATIO</td><td class="value highlight">2.28</td></tr>
-      </tbody>
-    </table>
-  </div>
+<div class="stat-panel">
+<div class="panel-title">CUSTOM <span>MATCHES</span></div>
+<table class="stat-table">
+<tr><td>Total Kills</td><td>731,006</td></tr>
+<tr><td>Total Deaths</td><td>320,617</td></tr>
+<tr class="highlight"><td>K/D Ratio</td><td>2.28</td></tr>
+</table>
+</div>
 
-  <div class="table-heading">RANKED MATCH STATISTICS</div>
-  <div class="table-wrap">
-    <table class="stats-table">
-      <thead>
-        <tr>
-          <th>STATISTIC</th>
-          <th>CAREER VALUE</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>GAMES PLAYED</td><td class="value">8,603</td></tr>
-        <tr><td>WINS</td><td class="value highlight">5,735</td></tr>
-        <tr><td>LOSSES</td><td class="value">2,868</td></tr>
-        <tr><td>WIN RATE</td><td class="value highlight">66.7%</td></tr>
-        <tr><td>TOTAL KILLS</td><td class="value highlight">126,552</td></tr>
-        <tr><td>TOTAL DEATHS</td><td class="value">89,617</td></tr>
-        <tr><td>K/D RATIO</td><td class="value highlight">1.41</td></tr>
-        <tr><td>ASSISTS</td><td class="value">1,273</td></tr>
-      </tbody>
-    </table>
-  </div>
+<div class="stat-panel">
+<div class="panel-title">RANKED <span>MATCHES</span></div>
+<table class="stat-table">
+<tr><td>Games Played</td><td>8,603</td></tr>
+<tr><td>Wins</td><td>5,735</td></tr>
+<tr><td>Losses</td><td>2,868</td></tr>
+<tr><td>Win Rate</td><td>66.7%</td></tr>
+<tr><td>Total Kills</td><td>126,552</td></tr>
+<tr><td>Total Deaths</td><td>89,617</td></tr>
+<tr class="highlight"><td>K/D Ratio</td><td>1.41</td></tr>
+<tr><td>Assists</td><td>1,273</td></tr>
+</table>
+</div>
 
-  <p class="note">
-    NEYO — CAREER STATISTICS · CUSTOM & RANKED RECORDS
-  </p>
+</div>
+
+<div class="stat-highlights">
+<div class="metric"><strong>2.28</strong><span>CUSTOM K/D</span></div>
+<div class="metric"><strong>1.41</strong><span>RANKED K/D</span></div>
+<div class="metric"><strong>731K+</strong><span>CUSTOM KILLS</span></div>
+<div class="metric"><strong>126K+</strong><span>RANKED KILLS</span></div>
+</div>
+
+<p class="stat-note">Statistics provided by the player. Historical figures, not live game data.</p>
 </section>
 
-<section id="career">
-  <div class="eyebrow">03 / COMPETITIVE HISTORY</div>
-  <h2>ACHIEVEMENTS.</h2>
-
-  <div class="achievements">
-
-    <div class="item">
-      <b>ELITE SINCE SEASON 3</b>
-      <p>Reached Elite rank in every season since Season 3.</p>
-    </div>
-
-    <div class="item">
-      <b>ELITE 1</b>
-      <p>Achieved the Elite 1 rank during a competitive career.</p>
-    </div>
-
-    <div class="item">
-      <b>2.0+ K/D SEASONS</b>
-      <p>Two seasons with a 2.0+ K/D while competing at Elite rank.</p>
-    </div>
-
-    <div class="item">
-      <b>CIRCUIT CHAMPION</b>
-      <p>Secured a Circuit victory, alongside numerous additional Circuit placements.</p>
-    </div>
-
-    <div class="item">
-      <b>MULTIPLE FIRST PLACES</b>
-      <p>Multiple first-place finishes across competitive events.</p>
-    </div>
-
-    <div class="item">
-      <b>RUMBLE PLACEMENTS</b>
-      <p>Multiple competitive Rumble placements and achievements.</p>
-    </div>
-
-    <div class="item">
-      <b>200+ CLAN WARS</b>
-      <p>Extensive Clan War experience, with multiple competitive placements.</p>
-    </div>
-
-    <div class="item">
-      <b>SNIPER & REVOLVER SPECIALIST</b>
-      <p>Recognized among the world's top Sniper and Revolver players for two consecutive years.</p>
-    </div>
-
-    <div class="item">
-      <b>FIVE-FINGER PLAYSTYLE</b>
-      <p>A five-finger control setup built around precision, speed and mechanical control.</p>
-    </div>
-
-    <div class="item">
-      <b>HUNGARIAN PLAYER</b>
-      <p>Representing Hungarian roots in the Critical Ops competitive scene.</p>
-    </div>
-
-  </div>
-</section>
-
+<!-- 02 CLAN LEGACY -->
 <section id="clans">
-  <div class="eyebrow">04 / TEAM HISTORY</div>
-  <h2>CLAN LEGACY.</h2>
+<div class="eyebrow">02 / TEAMS & HISTORY</div>
+<h2>CLAN LEGACY.</h2>
+<p class="section-intro">
+Every team represents a chapter. Every battle adds to the legacy.
+</p>
 
-  <p class="clan-intro">
-    Throughout his career, NEYO has competed alongside multiple teams and
-    communities, building experience across different competitive environments.
-  </p>
+<div class="current-clan">
+<div class="small">CURRENT CLAN / LEADERSHIP</div>
+<h3>[7o] BORN TO BE GOD!</h3>
+<p>CLAN LEADER — NEYO</p>
+</div>
 
-  <div class="clan-list">
-    <span class="clan">E8</span>
-    <span class="clan">RGN</span>
-    <span class="clan">inK</span>
-    <span class="clan">God</span>
-    <span class="clan">VLRS</span>
-    <span class="clan">HMRS</span>
-    <span class="clan">xQ</span>
-    <span class="clan">G9</span>
-    <span class="clan">G2</span>
-    <span class="clan">Ev</span>
-    <span class="clan">1NQ</span>
-    <span class="clan">2EZ4</span>
-    <span class="clan">S2F</span>
-    <span class="clan">CsPG</span>
-    <span class="clan">XZI</span>
-    <span class="clan">Lega</span>
-    <span class="clan">666</span>
-    <span class="clan">XnXX</span>
-  </div>
-
-  <div style="height:40px"></div>
-
-  <div class="eyebrow">CURRENT TEAM</div>
-  <div class="current-clan">
-    <p>CURRENT CLAN</p>
-    <h3>[7o] BORN TO BE GOD!</h3>
-    <p class="leader">CLAN LEADER — NEYO</p>
-  </div>
+<div class="clan-label">FORMER CLANS</div>
+<div class="clan-list">
+<div class="clan">E8</div>
+<div class="clan">RGN</div>
+<div class="clan">inK</div>
+<div class="clan">God</div>
+<div class="clan">VLRS</div>
+<div class="clan">HMRS</div>
+<div class="clan">xQ</div>
+<div class="clan">G9</div>
+<div class="clan">G2</div>
+<div class="clan">Ev</div>
+<div class="clan">1NQ</div>
+<div class="clan">2EZ4</div>
+<div class="clan">S2F</div>
+<div class="clan">CsPG</div>
+<div class="clan">XZI</div>
+<div class="clan">Lega</div>
+<div class="clan">666</div>
+<div class="clan">XnXX</div>
+</div>
 </section>
 
+<!-- 03 ACHIEVEMENTS -->
+<section id="achievements">
+<div class="eyebrow">03 / COMPETITIVE RECORD</div>
+<h2>ACHIEVEMENTS.</h2>
+<p class="section-intro">
+Milestones earned through consistency, dedication and competitive experience.
+</p>
+
+<div class="achievements">
+<div class="item"><b>ELITE SINCE SEASON 3</b><p>Reached Elite rank season after season since Season 3.</p></div>
+<div class="item"><b>ELITE 1</b><p>Achieved the highest Elite 1 milestone.</p></div>
+<div class="item"><b>2.0+ K/D SEASONS</b><p>Two seasons with a 2.0+ K/D while competing at Elite rank.</p></div>
+<div class="item"><b>CIRCUIT CHAMPION</b><p>Secured a Circuit victory and multiple additional placements.</p></div>
+<div class="item"><b>RUMBLE PLACEMENTS</b><p>Competitive Rumble results and placements.</p></div>
+<div class="item"><b>200+ CLAN WARS</b><p>More than 200 Clan Wars played.</p></div>
+<div class="item"><b>GOLDEN OX</b><p>A notable in-game achievement.</p></div>
+<div class="item"><b>COMPETITIVE EXPERIENCE</b><p>Years of ranked, custom and team-based competition.</p></div>
+<div class="item"><b>HUNGARIAN PLAYER</b><p>Representing Hungary in the Critical Ops community.</p></div>
+</div>
+</section>
+
+<!-- 04 THE PLAYER -->
+<section id="player">
+<div class="eyebrow">04 / PLAYER PROFILE</div>
+<h2>THE PLAYER.</h2>
+
+<div class="player-grid">
+<div>
+<p class="about">
+Known as <strong>NEYO</strong> in Critical Ops, a Hungarian player focused on precision,
+fast reactions, mechanical skill and competitive gameplay.
+<br><br>
+With a long history of Elite-level performance, ranked matches, Clan Wars
+and competitive events, NEYO has built a profile around consistency,
+adaptability and dedication.
+<br><br>
+A five-finger playstyle supports fast control, movement and aim.
+</p>
+</div>
+
+<div class="player-facts">
+<div class="fact"><strong>HUNGARY</strong><span>COUNTRY</span></div>
+<div class="fact"><strong>5 FINGERS</strong><span>PLAYSTYLE</span></div>
+<div class="fact"><strong>ELITE</strong><span>COMPETITIVE LEVEL</span></div>
+<div class="fact"><strong>SEASON 3+</strong><span>ELITE HISTORY</span></div>
+</div>
+</div>
+</section>
+
+<!-- 05 THE LEGACY -->
+<section id="legacy">
+<div class="eyebrow">05 / SPECIALIZATION</div>
+<h2>THE LEGACY.</h2>
+<p class="section-intro">
+Two weapons. Two years. A playstyle built around precision and confidence.
+</p>
+
+<div class="legacy-grid">
+<div class="legacy-card">
+<div class="symbol">⌖</div>
+<h3>SNIPER LEGACY</h3>
+<p>
+For two years, recognized among the world's top sniper players.
+Known for precision, timing, positioning and decisive shots.
+</p>
+<div class="legacy-bottom">PRECISION / PATIENCE / CONTROL</div>
+</div>
+
+<div class="legacy-card">
+<div class="symbol">✦</div>
+<h3>REVOLVER LEGACY</h3>
+<p>
+A specialist in high-pressure revolver gameplay, built on accuracy,
+fast reactions and confidence in every shot.
+</p>
+<div class="legacy-bottom">ACCURACY / REACTION / CONSISTENCY</div>
+</div>
+</div>
+</section>
+
+<!-- 06 CONTACT -->
 <section id="contact">
-  <div class="eyebrow">05 / GET IN TOUCH</div>
-  <h2>CONTACT & SOCIALS.</h2>
+<div class="eyebrow">06 / GET IN TOUCH</div>
+<h2>CONTACT.</h2>
+<p class="section-intro">
+Follow the journey or connect with NEYO.
+</p>
 
-  <div class="contact-grid">
-    <a class="contact"
-       href="https://www.instagram.com/azxhuree_official/"
-       target="_blank"
-       rel="noopener noreferrer">
-      <strong>INSTAGRAM</strong>
-      <span>@azxhuree_official ↗</span>
-    </a>
+<div class="contact-grid">
+<a class="contact-card" href="https://www.instagram.com/azxhuree_official/" target="_blank" rel="noopener">
+<span>INSTAGRAM</span>
+<strong>@azxhuree_official ↗</strong>
+</a>
 
-    <div class="contact">
-      <strong>DISCORD</strong>
-      <span>Azxhure#7130</span>
-    </div>
-  </div>
+<div class="contact-card">
+<span>DISCORD</span>
+<strong>Azxhure#7130</strong>
+</div>
+</div>
+
+<p class="contact-note">
+Critical Ops player profile / Hungary<br>
+For collaborations, gaming and community connections.
+</p>
 </section>
 
 </main>
 
 <footer>
-  NEYO <span>©</span> 2026 — CRITICAL OPS
-  <br>
-  BUILT TO COMPETE. REMEMBER THE NAME.
+NEYO <span>©</span> 2026 — CRITICAL OPS
+<br>
+BUILT TO COMPETE. REMEMBER THE NAME.
 </footer>
 
 </body>
